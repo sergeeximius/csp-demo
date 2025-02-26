@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  front:
+    build: ./front
+    ports:
+      - "80:80"
+    volumes:
+      - ./front/html:/usr/share/nginx/html
+    depends_on:
+      - csp-report-server
+
+  csp-report-server:
+    build: ./csp-report-server
+    # ports:
+    #   - "5000:5000"
+    volumes:
+      - ./csp-reports:/app/csp-reports

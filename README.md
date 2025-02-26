@@ -78,18 +78,16 @@ CSP — это важный инструмент безопасности, ко�
 ## Пример отчета
 ```json
 {
+  "type": "csp-violation",
+  "url": "http://csp.eximius.ru/xss.html",
   "csp-report": {
     "document-uri": "http://csp.eximius.ru/xss.html",
     "referrer": "",
-    "violated-directive": "script-src 'self'",
-    "effective-directive": "script-src",
+    "violated-directive": "script-src-elem",
+    "effective-directive": "script-src-elem",
     "original-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; report-uri /csp-violation-report-endpoint",
     "blocked-uri": "https://malicious-site.com/evil.js",
-    "line-number": 10,
-    "column-number": 5,
-    "source-file": "http://csp.eximius.ru/xss.html",
-    "status-code": 200,
-    "script-sample": ""
+    "status-code": 200
   }
 }
 ```
